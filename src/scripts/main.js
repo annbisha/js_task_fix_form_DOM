@@ -1,8 +1,7 @@
 'use strict';
 
-'use strict';
-
-const inputs = document.querySelectorAll('.field input');
+const form = document.querySelector('form');
+const inputs = form.querySelectorAll('input');
 
 inputs.forEach((input) => {
   const inputName = input.name;
@@ -16,5 +15,5 @@ inputs.forEach((input) => {
   label.setAttribute('for', input.id);
   label.textContent = labelText;
 
-  input.parentElement.appendChild(label);
+  input.parentElement.insertBefore(label, input);
 });
